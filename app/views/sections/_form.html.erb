@@ -1,0 +1,40 @@
+<%= form_with(model: section, local: true) do |form| %>
+  <% if section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+      <% section.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :section_number %>
+    <%= form.number_field :section_number, id: :section_section_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :class_location %>
+    <%= form.text_field :class_location, id: :section_class_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :professor_id %><br>
+    <%= form.collection_select(:professor_id, @professors,:id, :first_name, include_blank: true) %>
+    <br>
+  </div>
+    <div class="field">
+      <%= form.label :course_id %><br>
+      <%= form.collection_select(:course_id, @courses, :id, :course_name, include_blank: true) %>
+      <br>
+    </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
