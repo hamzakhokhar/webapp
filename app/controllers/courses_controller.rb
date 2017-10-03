@@ -60,6 +60,11 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def search
+    @courses= Course.where("course_name like ?", "%#{params[:q]}%")
+    render :index
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

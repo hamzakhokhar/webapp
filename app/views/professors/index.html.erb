@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Professors</h1>
+<%= form_tag(search_professors_url, method: "get") do %>
+    <%= label_tag(:q,"Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+    <% end %>
+
 
 <table>
   <thead>
@@ -30,11 +36,8 @@
 </table>
 
 <br>
-
-
-
-
-
-
-
 <%= link_to 'New Professor', new_professor_path %>
+<%= link_to 'log out', destroy_user_session_path, method: :delete %>
+<br>
+<%= link_to 'Go To sections', sections_path %>
+<%= link_to 'Go To courses', courses_path %>
