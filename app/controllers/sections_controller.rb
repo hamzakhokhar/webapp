@@ -17,12 +17,14 @@ class SectionsController < ApplicationController
     @section = Section.new
     @professors = Professor.all
     @courses = Course.all
+    @students = Student.all
   end
 
   # GET /sections/1/edit
   def edit
     @professors = Professor.all
     @courses = Course.all
+    @students = Student.all
   end
 
   # POST /sections
@@ -80,6 +82,6 @@ class SectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
-      params.require(:section).permit(:section_number, :class_location, :professor_id, :course_id)
+      params.require(:section).permit(:section_number, :class_location, :professor_id, :course_id, :students_id =>[])
     end
 end
