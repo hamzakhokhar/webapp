@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Project11</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Web Apllication</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body class="container">
+
+<header class="navbar navbar">
+  <div class="container-fluid">
+    <div class="navbar-brand" href="#">Hamza KhokaR</a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://localhost:3000">home</a></li>
+      <li><%= link_to "Professors", professors_path%></li>
+      <li><%= link_to "Courses", courses_path %></li>
+      <li><%= link_to "Sections", sections_path %></li>
+      <li><%= link_to "Students", students_path%></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+
+  </div>
+</nav>
+</header>
+<%= yield %>
+</body>
 </html>

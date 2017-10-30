@@ -6,7 +6,7 @@
     <%= text_field_tag(:q) %>
     <%= submit_tag("Search") %>
 <% end %>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Course name</th>
@@ -27,9 +27,6 @@
 </table>
 
 <br>
-<%= link_to 'New Course', new_course_path %>
-<%= link_to 'log out', destroy_user_session_path, method: :delete %>
-<br>
-<%= link_to 'Go To sections', sections_path %>
-<%= link_to 'Go To professors', professors_path %>
+<%= button_to 'New Course', new_course_path, :method => "get" %>
+
 

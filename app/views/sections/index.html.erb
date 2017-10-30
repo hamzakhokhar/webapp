@@ -7,7 +7,7 @@
     <%= submit_tag("Search") %>
 <% end %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Section number</th>
@@ -36,8 +36,4 @@
 
 <br>
 
-<%= link_to 'New Section', new_section_path %>
-<%= link_to 'log out', destroy_user_session_path, method: :delete %>
-<br>
-<%= link_to 'Go To professors', professors_path %>
-<%= link_to 'Go To courses', courses_path %>
+<%= button_to 'New Section', new_section_path,:method=> "get" %>
